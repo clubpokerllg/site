@@ -1,0 +1,568 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cours — Texas Hold'em</title>
+  <link rel="stylesheet" href="styletest.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body class="bodycours">
+
+<header class="header">
+  <div class="logo">
+    <h1>Club Poker LLG</h1>
+  </div>
+  <nav class="nav-menu">
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="outils.html">Outils de jeu</a></li>
+      <li><a style="font-weight:bold;" href="cours.html">Cours</a></li>
+      <li><a href="tournoi.html">Tournoi</a></li>
+      <li><a href="connexion.html">Connexion</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+body {
+    background-color: #0A0A0A;
+    margin: 0;
+    padding: 0;
+}
+
+.cours {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+    .cours {
+        padding: 0 20px;
+    }
+}
+
+.small {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.cours h1,
+.cours h3 {
+    text-align: center;
+}
+
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+</style>
+
+<div class="cours">
+
+
+<h1>Thème 1 — Fondamentaux du Texas Hold'em</h1>
+<p class="small">
+Ce premier thème pose les bases du Texas Hold'em : les combinaisons de cartes, la sélection des mains de départ, l'importance de la position à la table, la gestion du tapis et les grandes familles de stratégies.
+</p>
+
+<hr>
+
+<h1>Cours 1 : Les combinaisons</h1>
+<p class="small">
+Au Texas Hold'em, chaque joueur reçoit 2 cartes privées (<em>hole cards</em>) et dispose de 5 cartes communes (<em>community cards</em>) posées au centre de la table. L'objectif est de former la meilleure combinaison possible de 5 cartes en utilisant n'importe quelle combinaison de ces 7 cartes.
+</p>
+
+<p class="small">
+Voici les combinaisons classées de la plus forte à la plus faible :
+</p>
+
+<p class="small">
+<b>Quinte flush royale</b><br>
+10, Valet, Dame, Roi, As de la même couleur. La main la plus rare du poker.
+<br><br>
+<b>Quinte flush</b><br>
+Cinq cartes consécutives de même couleur (ex : 5♣ 6♣ 7♣ 8♣ 9♣). En cas d'égalité, la quinte flush la plus haute l'emporte.
+<br><br>
+<b>Carré</b><br>
+Quatre cartes de même valeur (ex : 7♠ 7♥ 7♦ 7♣). Le carré de valeur la plus élevée l'emporte.
+<br><br>
+<b>Full house</b><br>
+Un brelan combiné à une paire (ex : R♠ R♥ R♦ D♠ D♥). C'est la valeur du brelan, et non celle de la paire, qui détermine le vainqueur en cas d'égalité.
+<br><br>
+<b>Couleur (flush)</b><br>
+Cinq cartes de la même couleur, sans ordre particulier. En cas d'égalité, on compare les cartes de la plus haute à la plus basse.
+<br><br>
+<b>Suite (quinte / straight)</b><br>
+Cinq cartes consécutives de couleurs différentes (ex : 7♠ 8♣ 9♦ 10♥ V♠). L'As peut servir de bas (As-2-3-4-5, appelée « roue ») ou de haut (10-V-D-R-As).
+<br><br>
+<b>Brelan (three of a kind)</b><br>
+Trois cartes de même valeur.
+<br><br>
+<b>Double paire (two pair)</b><br>
+Deux paires distinctes. En cas d'égalité, on compare d'abord la paire la plus haute, puis la plus basse, puis le <em>kicker</em>.
+<br><br>
+<b>Paire (one pair)</b><br>
+Deux cartes de même valeur.
+<br><br>
+<b>Carte haute (high card)</b><br>
+Aucune combinaison. Le vainqueur est déterminé par la carte la plus haute.
+</p>
+
+<p class="small">
+<b>Le kicker :</b> lorsque deux joueurs ont une combinaison identique (par exemple, une paire d'As chacun), c'est la ou les cartes restantes — appelées <em>kickers</em> — qui départagent les mains. Exemple : A♠ A♥ K♦ 7♣ 3♠ bat A♦ A♣ Q♠ 7♥ 3♦ car le Roi est supérieur à la Dame.
+</p>
+
+<div class="image-container">
+  <img src="images/combin.jpg" width="300" height="auto">
+</div>
+
+<hr>
+
+<h1>Cours 2 : Les mains de départ</h1>
+<p class="small">
+La sélection des mains de départ (<em>hand selection</em> ou <em>preflop range</em>) est l'une des compétences les plus importantes du poker. Jouer trop de mains est l'erreur la plus répandue chez les débutants — elle génère des situations difficiles à gérer post-flop et érode le capital sur le long terme.
+</p>
+
+<p class="small">
+Quelques notations utiles : <b>s</b> (pour <em>suited</em>) signifie que les deux cartes sont de la même couleur — ex : A5s = As et 5 de même couleur. <b>o</b> (pour <em>offsuit</em>) signifie qu'elles ne le sont pas. Une main comme KQs est dite <em>connectée et assortie</em>.
+</p>
+
+<h3>Mains premium</h3>
+<p class="small">
+AA, KK, QQ, JJ, AKs. Ces mains dominent statistiquement presque toutes les autres. Elles se jouent avec une relance (<em>raise</em>) ou une contre-relance (<em>3-bet</em>) dans pratiquement toutes les situations. AA et KK sont des mains qu'on ne peut pas folder avant le flop.
+</p>
+
+<h3>Mains fortes</h3>
+<p class="small">
+TT, 99, AQs, AKo, KQs. Des mains solides qui se jouent agressivement en position, mais qui méritent davantage de prudence face à une contre-relance importante — particulièrement en early position où la range adverse est la plus serrée.
+</p>
+
+<h3>Mains jouables</h3>
+<p class="small">
+88, 77, AJs, AQo, KJs, QJs, JTs. Ces mains ont de la valeur mais dépendent fortement du contexte : la position, le profil des adversaires et l'action précédente influencent directement la décision de jouer ou de passer.
+</p>
+
+<h3>Mains spéculatives</h3>
+<p class="small">
+Petites paires (22–66), suited connectors (56s, 78s, 89s), suited aces (A2s–A9s). Ces mains n'ont pas de valeur intrinsèque élevée, mais elles peuvent générer des combinaisons cachées très puissantes (brelan discret, tirage à couleur ou à la quinte). Elles sont rentables principalement en <em>deep stack</em> (voir Cours 4) et en position tardive, où les <em>implied odds</em> — les gains potentiels futurs — justifient l'investissement initial.
+</p>
+
+<h3>Mains à abandonner</h3>
+<p class="small">
+Toute main non assortie avec des cartes faibles et sans connexion (J2o, 94o, 83o…). Ces mains perdent de l'argent sur le long terme quelle que soit la manière dont elles sont jouées. Les passer systématiquement est une discipline fondamentale.
+</p>
+
+<p class="small">
+<b>Principe général :</b> En early position (UTG, UTG+1), restreindre la range aux mains premium et fortes. En late position (cutoff, bouton), il est possible de l'élargir significativement grâce à l'avantage positionnel.
+</p>
+
+<hr>
+
+<h1>Cours 3 : La position à la table</h1>
+<p class="small">
+La position désigne l'ordre de parole d'un joueur au sein d'une main. Au Texas Hold'em, cet ordre est fixe à partir du flop : le joueur à gauche de la grosse blind parle en premier, et le donneur (<em>bouton</em>) parle en dernier. Parler en dernier — être <em>in position</em> — est un avantage considérable, car on dispose de l'information sur les actions adverses avant d'agir.
+</p>
+
+<h3>Early position (UTG, UTG+1, UTG+2)</h3>
+<p class="small">
+Les premières positions à gauche de la grosse blind. On parle en premier post-flop sur tous les tours de mise, sans aucune information préalable sur les intentions adverses. Cela impose une range très serrée : seules les mains premium et fortes sont rentables ici sur le long terme.
+</p>
+
+<h3>Middle position (MP, MP+1, Hijack)</h3>
+<p class="small">
+Un compromis entre early et late position. La range peut légèrement s'élargir par rapport à l'UTG, mais reste contrainte par les joueurs encore à parler derrière. Les mains spéculatives restent risquées ici.
+</p>
+
+<h3>Late position (Cutoff, Bouton)</h3>
+<p class="small">
+Le bouton est la meilleure position au poker : on parle en dernier sur tous les tours post-flop. Cela permet de contrôler la taille du pot, de bluffer avec plus d'efficacité, et d'extraire davantage de valeur avec les bonnes mains. Le <em>cutoff</em> (siège juste avant le bouton) est la deuxième meilleure position. Une large partie du profit au poker se génère ici.
+</p>
+
+<h3>Les blinds (Small Blind, Big Blind)</h3>
+<p class="small">
+Les blinds sont les positions les plus défavorables : on a investi des jetons sans voir ses cartes, mais on joue <em>out of position</em> (on parle en premier) post-flop contre presque tous les adversaires. La défense des blinds doit être raisonnée : la taille de la relance adverse, le profil de l'adversaire et la main concernée sont les variables à considérer. Défendre trop large par simple réflexe de « ne pas se faire voler » est une erreur courante.
+</p>
+
+<p class="small">
+<b>Synthèse :</b> La position compense souvent une main légèrement inférieure. Une main moyenne jouée en position peut être plus profitable qu'une main forte jouée hors position.
+</p>
+
+<hr>
+
+<h1>Cours 4 : La gestion du tapis (stack)</h1>
+<p class="small">
+La taille du tapis (<em>stack</em>) se mesure en nombre de grosses blinds (BB). Cette métrique est fondamentale : elle détermine les options disponibles et les stratégies applicables. Un joueur avec 15 BB et un joueur avec 100 BB n'ont pas accès aux mêmes outils de jeu.
+</p>
+
+<h3>Short stack (moins de 20 BB)</h3>
+<p class="small">
+En dessous de 20 BB, les possibilités post-flop se réduisent drastiquement. La stratégie optimale devient alors le jeu <em>push/fold</em> : soit on relance all-in, soit on passe. Cette approche, bien que brutale, est mathématiquement justifiée : les mises de continuation et les bluffs multi-streets ne sont plus viables. Les outils comme les <em>Nash equilibrium push/fold charts</em> permettent d'optimiser cette phase.
+</p>
+
+<h3>Stack moyen (20–50 BB)</h3>
+<p class="small">
+Une zone intermédiaire où il est encore possible de jouer post-flop, mais avec des marges de manœuvre limitées. Les relances pré-flop standards (2–2,5 BB) et les mises de continuation (<em>c-bets</em>) restent utilisables, mais les bluffs multi-streets sont à éviter — le pot grossit trop vite par rapport au stack.
+</p>
+
+<h3>Deep stack (plus de 50 BB)</h3>
+<p class="small">
+Au-delà de 50 BB, et a fortiori au-delà de 100 BB, le jeu post-flop prend toute son importance. Les mains spéculatives deviennent plus rentables grâce aux <em>implied odds</em> élevés : si on touche une combinaison puissante et discrète (un brelan avec une petite paire, par exemple), on peut espérer gagner un pot très important. Le jeu deep stack est techniquement plus complexe et requiert une lecture fine des situations.
+</p>
+
+<p class="small">
+<b>Règle fondamentale :</b> Ne pas adapter sa stratégie à la taille du stack est une erreur structurelle. Elle génère des décisions incohérentes qui coûtent cher sur le long terme.
+</p>
+
+<hr>
+
+<h1>Cours 5 : Les grandes stratégies de jeu</h1>
+<p class="small">
+La stratégie au poker désigne l'ensemble des principes qui guident les décisions. Les deux grandes familles de stratégies se définissent selon deux axes : le nombre de mains jouées (<em>tight</em> vs <em>loose</em>) et l'intensité des mises (<em>passive</em> vs <em>agressive</em>).
+</p>
+
+<h3>Tight-Aggressive (TAG)</h3>
+<p class="small">
+Peu de mains jouées, mais jouées avec agressivité (relances, mises de continuation). C'est la stratégie recommandée pour les joueurs qui débutent : elle minimise les situations délicates et maximise la valeur extraite des bonnes mains. La logique est simple — on n'entre dans le pot qu'avec des mains qui ont une vraie valeur attendue positive.
+</p>
+
+<h3>Loose-Aggressive (LAG)</h3>
+<p class="small">
+Beaucoup de mains jouées, avec une pression constante sur les adversaires. Ce style est potentiellement très rentable, mais difficile à maîtriser : il exige une lecture fine du jeu, une grande capacité à gérer la pression et une parfaite connaissance des situations où le bluff est viable. Les meilleurs joueurs de poker au monde jouent souvent un style LAG adaptatif.
+</p>
+
+<h3>Jeu exploitant (<em>exploitative play</em>)</h3>
+<p class="small">
+Adapter son jeu aux erreurs spécifiques de ses adversaires plutôt que de suivre une stratégie théorique fixe. Contre un joueur trop passif qui ne relance jamais sans un monstre, le bluff est plus efficace. Contre un joueur trop agressif qui mise en permanence, le <em>trap</em> (feindre la faiblesse avec une grosse main) est plus rentable. L'observation et la prise de notes sont les outils de base du jeu exploitant.
+</p>
+
+<h3>Notions clés à retenir</h3>
+<p class="small">
+<b>Value bet :</b> miser pour extraire de la valeur lorsqu'on est favori — l'adversaire doit appeler avec des mains qui nous battent moins souvent que ce que le pot justifie.<br><br>
+<b>Bluff réfléchi :</b> miser sans la meilleure main dans un contexte où l'adversaire peut raisonnablement passer (voir Thème 3).<br><br>
+<b>Contrôle du pot (<em>pot control</em>) :</b> éviter de laisser grossir un pot important quand on a une main moyenne — limiter les mises pour réduire le risque.<br><br>
+<b>Équilibre (</b><em>balance</em><b>) :</b> contre des joueurs attentifs, mixer value bets et bluffs de manière à rendre son jeu difficile à lire.
+</p>
+
+<hr>
+<hr>
+
+<h1>Thème 2 — Psychologie et Gestion</h1>
+<p class="small">
+La maîtrise technique ne suffit pas. Ce thème traite de tout ce qui se passe en dehors des cartes : la gestion du capital, le contrôle émotionnel, l'analyse des sessions, la lecture des adversaires et les biais cognitifs les plus courants au poker. Ces dimensions font souvent la différence entre un joueur gagnant et un joueur perdant.
+</p>
+
+<hr>
+
+<h1>Cours 6 : La gestion des ressources et la discipline de jeu</h1>
+<p class="small">
+Dans un contexte sans enjeu financier — tournois de club, jetons fictifs, parties entre amis — la notion de bankroll au sens strict disparaît. Mais les principes qui la sous-tendent restent entièrement valables : gérer ses ressources avec discipline, éviter les risques inconsidérés, et penser sur le long terme plutôt que coup par coup.
+</p>
+
+<h3>Le tapis comme ressource limitée</h3>
+<p class="small">
+Dans un tournoi, les jetons sont une ressource non renouvelable. Une fois perdus, la partie est terminée. Ce principe impose la même rigueur qu'une vraie bankroll : prendre un risque inconsidéré avec la totalité de son tapis sur une main marginale, c'est s'exposer à une élimination qui n'était pas nécessaire, indépendamment du résultat.
+
+La question à se poser avant chaque grosse décision n'est pas « est-ce que je peux gagner ce coup ? » mais « est-ce que ce risque est justifié par rapport à ce que j'ai à perdre ? »
+</p>
+
+<h3>Penser en termes de valeur attendue, pas de résultats</h3>
+<p class="small">
+C'est le cœur de la discipline de jeu. La <em>valeur attendue</em> (ou <em>EV</em>, pour <em>expected value</em>) d'une décision, c'est son résultat moyen sur un grand nombre de répétitions. Une décision peut avoir une EV positive et produire un mauvais résultat ponctuellement — et inversement.
+
+Exemple : appeler all-in avec une paire d'As contre une paire de Rois est correct — on est favori à environ 80 %. Si les Rois gagnent, la décision restait bonne. Évaluer ses décisions à l'aune de leur logique, et non de leur résultat immédiat, est une discipline qui s'entraîne.
+</p>
+
+<h3>La gestion du risque dans les tournois</h3>
+<p class="small">
+Même sans argent, certains principes de gestion s'appliquent directement.<br><br>
+<b>Ne pas jouer all-in sans raison valable avec un grand tapis.</b> Avec beaucoup de jetons, on dispose d'un avantage structurel sur les petits tapis — le mettre en jeu inutilement sur un coup incertain est une erreur stratégique.<br><br>
+<b>Conserver un tapis jouable.</b> En dessous d'environ 10 à 15 BB, les options tactiques se réduisent drastiquement. Anticiper cette situation et agir avant d'y arriver — plutôt qu'attendre la main parfaite trop longtemps — est une compétence à part entière.<br><br>
+<b>Adapter son niveau de risque à la situation du tournoi.</b> En début de tournoi, les risques inutiles ne valent pas la peine. En fin de tournoi, près de la bulle ou en tête-à-tête, la prise de risque calculée devient souvent nécessaire.
+</p>
+
+<h3>Ce que ces principes apprennent en dehors du poker</h3>
+<p class="small">
+La gestion des ressources, la patience, la distinction entre décision et résultat, et la discipline face à l'envie de « tout mettre » sur un coup d'éclat sont des réflexes qui dépassent largement le cadre du jeu. C'est une des raisons pour lesquelles le poker est utilisé dans certains contextes éducatifs pour enseigner la pensée probabiliste et la gestion du risque.
+</p>
+
+<hr>
+
+<h1>Cours 7 : Le contrôle émotionnel et le tilt</h1>
+<p class="small">
+Le <em>tilt</em> désigne un état émotionnel dégradé — généralement provoqué par une frustration, une perte injuste ou une longue série négative — qui altère la qualité des décisions. Un joueur en tilt joue différemment de sa stratégie optimale : il bluff sans logique, appelle trop, ou au contraire se fige dans la passivité. Le tilt est l'une des principales causes de perte au poker.
+</p>
+
+<h3>Les déclencheurs courants</h3>
+<p class="small">
+<b>Bad beat :</b> perdre un pot avec une main largement favorite. Statistiquement inévitable, mais psychologiquement difficile à encaisser.<br><br>
+<b>Série de pertes :</b> plusieurs sessions consécutives négatives, même en jouant correctement.<br><br>
+<b>Adversaires irritants :</b> joueurs qui parlent trop, qui slow-play de manière théâtrale, ou qui semblent toujours avoir les cartes au bon moment.<br><br>
+<b>Facteurs extérieurs :</b> fatigue, stress, problèmes personnels. Le cerveau ne fait pas la distinction entre les sources d'irritation.
+</p>
+
+<h3>Comment limiter le tilt</h3>
+<p class="small">
+<b>Reconnaître les signes précoces :</b> l'impatience, les commentaires intérieurs négatifs, l'envie de « récupérer » rapidement sont des signaux d'alerte.<br><br>
+<b>Fixer un stop-loss de session :</b> décider à l'avance d'arrêter après X buy-ins perdus dans une session, et s'y tenir sans exception.<br><br>
+<b>Accepter la variance :</b> un bad beat n'est pas une injustice — c'est une réalité mathématique. Sur un grand nombre de mains, les décisions correctes sont toujours rentables.<br><br>
+<b>Ne pas jouer fatigué ou émotionnellement chargé :</b> les conditions dans lesquelles on joue affectent directement la qualité du jeu. Jouer dans un mauvais état, c'est se pénaliser soi-même.
+</p>
+
+<p class="small">
+<b>Méthode simple :</b> lorsque la frustration monte, quitter la table ou la session. Il n'existe pas de mécanisme fiable pour « jouer à travers » le tilt — seul le temps ou une activité de décompression le dissipe.
+</p>
+
+<hr>
+
+<h1>Cours 8 : L'analyse de ses sessions</h1>
+<p class="small">
+La progression au poker ne vient pas uniquement du temps passé à jouer — elle vient de la qualité de la réflexion que l'on mène sur son propre jeu. L'analyse des sessions (<em>hand review</em>) permet de distinguer les décisions correctes des erreurs, indépendamment du résultat immédiat.
+</p>
+
+<h3>Pourquoi les résultats ne suffisent pas</h3>
+<p class="small">
+Gagner un coup ne signifie pas qu'on l'a bien joué, et perdre un coup ne signifie pas qu'on a mal joué. La variance obscurcit la relation entre qualité des décisions et résultats à court terme. Seule l'analyse structurelle permet de progresser réellement.
+</p>
+
+<h3>Comment mener une review efficace</h3>
+<p class="small">
+<b>Identifier les mains clés :</b> noter les coups où l'on a hésité, où l'on a pris une décision inhabituelle, ou où l'on a perdu ou gagné un pot important.<br><br>
+<b>Reconstruire le raisonnement :</b> pourquoi cette décision a-t-elle été prise à ce moment-là ? Était-elle basée sur une logique solide ou sur une émotion ?<br><br>
+<b>Formuler les bonnes questions :</b> « Ma mise était-elle cohérente avec mon histoire ? », « Mon fold était-il justifié par les pot odds ? », « Quel était le range probable de mon adversaire à ce moment-là ? »<br><br>
+<b>Être honnête :</b> l'auto-analyse perd toute valeur si elle est biaisée par la recherche d'excuses. L'objectif est d'identifier ce qui aurait dû être fait différemment, pas de se justifier.
+</p>
+
+<h3>Fréquence recommandée</h3>
+<p class="small">
+Étudier 2 à 3 mains en profondeur après chaque session est largement suffisant pour progresser rapidement. La qualité de l'analyse prime sur la quantité. Discuter des mains avec d'autres joueurs est particulièrement utile : un regard extérieur identifie des erreurs que l'on ne voit pas soi-même.
+</p>
+
+<hr>
+
+<h1>Cours 9 : Lire ses adversaires (tells et patterns)</h1>
+<p class="small">
+Au poker, l'information est une ressource précieuse. Deux types d'information sont disponibles : les <em>tells</em> physiques, qui concernent le comportement corporel d'un joueur, et les <em>patterns</em> de jeu, qui sont ses habitudes et tendances répétées. Les patterns sont généralement plus fiables que les tells.
+</p>
+
+<h3>Les tells physiques (poker live)</h3>
+<p class="small">
+<b>Tremblements des mains :</b> souvent associés à une forte main (adrénaline), et non à un bluff.<br><br>
+<b>Variation du timing :</b> un appel (<em>call</em>) très rapide indique fréquemment un tirage en cours ; une longue réflexion suivie d'une grosse relance peut signaler une main très forte.<br><br>
+<b>Changement de posture :</b> un joueur qui se redresse ou qui devient soudainement attentif a souvent touché le flop.<br><br>
+<b>Protection des cartes :</b> la manière dont un joueur protège ses cartes peut varier selon la force de sa main — certains joueurs couvrent davantage lorsqu'ils ont quelque chose à défendre.
+</p>
+
+<p class="small">
+<b>Limite des tells :</b> ils ne sont jamais fiables à 100 %. Les joueurs expérimentés les utilisent parfois intentionnellement pour induire en erreur (<em>reverse tells</em>). Les baser comme seule source de décision est une erreur.
+</p>
+
+<h3>Les patterns de jeu</h3>
+<p class="small">
+Les habitudes répétées d'un joueur sont bien plus exploitables que ses tells physiques. Quelques exemples :<br><br>
+Un joueur <em>tight</em> qui relance à la river a presque toujours une main solide — ses relances méritent d'être respectées.<br><br>
+Un joueur <em>passive</em> qui sur-relance soudainement (check-raise, cold 4-bet) détient généralement un monstre.<br><br>
+Un joueur <em>loose-agressif</em> mise fréquemment sans avoir la meilleure main — ses relances sont à défier avec des mains moyennes.<br><br>
+Un joueur qui ne bluff jamais à la river : face à sa mise, les mains marginales méritent d'être foldées sans hésitation.
+</p>
+
+<h3>Prendre des notes</h3>
+<p class="small">
+Mémoriser les tendances adverses et, en ligne, utiliser les outils de prise de notes disponibles dans les logiciels. Ces observations s'accumulent et permettent d'ajuster les décisions de manière de plus en plus fine au fil du temps.
+</p>
+
+<h3>Rester imprévisible</h3>
+<p class="small">
+Les adversaires observent aussi. Varier les sizings, les lignes de jeu et les rythmes d'action avec les mêmes types de mains évite d'être exploité par des joueurs attentifs. Si la relance est systématiquement de 3BB avec AA et de 2,5BB avec AK, les bons joueurs s'en rendront compte.
+</p>
+
+<hr>
+
+<h1>Cours 10 : Les biais cognitifs au poker</h1>
+<p class="small">
+Les biais cognitifs sont des erreurs de raisonnement systématiques que le cerveau commet naturellement. Au poker, où les enjeux émotionnels et financiers sont importants, ils influencent fortement les décisions. Les reconnaître est la première étape pour les contourner.
+</p>
+
+<h3>Le biais de résultat (<em>outcome bias</em>)</h3>
+<p class="small">
+Évaluer une décision par son résultat plutôt que par sa logique. Exemple : avoir appelé avec une main faible et gagné ne valide pas l'appel — c'était statistiquement une mauvaise décision qui a simplement eu un bon résultat cette fois-ci. La qualité d'une décision se mesure à sa logique, pas à son issue.
+</p>
+
+<h3>Le biais de confirmation</h3>
+<p class="small">
+Ne retenir que les informations qui confirment une conviction préexistante. Exemple : être convaincu qu'un adversaire bluffe et ignorer tous les indices contraires. Une bonne lecture de situation intègre toutes les informations disponibles, y compris celles qui vont à l'encontre de l'hypothèse initiale.
+</p>
+
+<h3>Le sunk cost fallacy (coûts irrécupérables)</h3>
+<p class="small">
+Continuer d'investir dans un pot uniquement parce qu'on y a déjà mis des jetons. L'argent déjà misé appartient au pot — il ne doit pas influencer la décision actuelle. Chaque décision doit être prise en fonction des informations présentes, indépendamment du passé. Si les pot odds ne justifient pas un appel, il faut passer, quelle que soit la somme déjà investie.
+</p>
+
+<h3>L'excès de confiance dans l'intuition</h3>
+<p class="small">
+« Je sens qu'il bluffe » peut parfois être fondé sur une observation inconsciente valide — mais c'est aussi souvent de l'espoir ou de l'ego. Les décisions optimales se basent sur le range probable de l'adversaire, la taille du bet, l'historique de la main et les pot odds, pas sur un ressenti difficilement vérifiable.
+</p>
+
+<h3>Le tilt de vengeance</h3>
+<p class="small">
+Vouloir récupérer immédiatement une perte en prenant des risques excessifs. C'est mécaniquement contre-productif : les décisions prises sous l'impulsion d'une frustration sont rarement optimales, et les pertes s'accumulent. Le seul moyen de « récupérer » au poker est de jouer correctement sur le long terme.
+</p>
+
+<h3>Méthodes pour contrecarrer ces biais</h3>
+<p class="small">
+Analyser les mains à froid, plusieurs heures après la session. Solliciter le regard d'autres joueurs sans leur donner son propre avis d'abord. Tenir un journal des erreurs récurrentes. Se rappeler régulièrement que le poker est un jeu de long terme : aucune session individuelle n'est significative à elle seule.
+</p>
+
+<hr>
+<hr>
+
+
+<h1>Thème 3 — L'Art du Bluff</h1>
+<p class="small">
+Le bluff est la capacité à remporter un pot sans avoir la meilleure main, en convainquant l'adversaire de passer. C'est une composante essentielle du poker : sans bluff, le jeu devient mécanique et facilement exploitable. Mais bluffer sans logique est l'une des erreurs les plus coûteuses. Ce thème détaille les conditions dans lesquelles le bluff est rentable, les différentes techniques, et la manière de détecter les bluffs adverses.
+</p>
+
+<hr>
+
+<h1>Cours 11 : Anatomie d'un bon bluff</h1>
+<p class="small">
+Un bluff efficace n'est pas une mise faite « parce qu'on a rien ». C'est une narration cohérente — une histoire crédible que la séquence d'actions pré-flop et post-flop doit raconter. L'adversaire doit croire, sur la base de toutes les actions précédentes, que la main représentée est probable.
+</p>
+
+<h3>Les trois conditions d'un bluff rentable</h3>
+<p class="small">
+<b>1. La crédibilité :</b> les actions précédentes doivent raconter une histoire logique. Bluffer sur un board A♠ K♠ Q♠ 7♠ après avoir relancé pré-flop et mis au flop est crédible (on peut représenter la couleur ou une paire haute). Bluffer sur un board 2♣ 5♦ 7♠ 9♥ K♣ après avoir joué passivement l'est beaucoup moins.<br><br>
+<b>2. La fold equity :</b> l'adversaire doit être capable de passer une main décente. Si l'adversaire a un brelan ou une main très forte, la fold equity est nulle — le bluff ne peut pas réussir.<br><br>
+<b>3. Le bon adversaire :</b> certains joueurs n'abandonnent quasiment jamais (<em>calling stations</em>). Bluffer contre eux est systématiquement une erreur, quelle que soit la qualité du bluff.
+</p>
+
+<h3>Bluff pur vs semi-bluff</h3>
+<p class="small">
+Le <b>bluff pur</b> est une mise avec une main sans aucune valeur réelle si elle est payée (ex : une hauteur en river). C'est le type de bluff le plus risqué.<br><br>
+Le <b>semi-bluff</b> est une mise avec une main qui n'est pas encore la meilleure, mais qui dispose d'<em>outs</em> — des cartes qui pourraient améliorer la main à un tour ultérieur (tirage couleur, tirage quinte). Le semi-bluff est plus sûr car il offre deux façons de gagner le pot : le fold de l'adversaire, ou l'amélioration de la main.<br><br>
+Sur les premières streets (flop, turn), le semi-bluff est systématiquement préférable au bluff pur.
+</p>
+
+<hr>
+
+<h1>Cours 12 : Quand et contre qui bluffer ?</h1>
+
+<h3>Situations favorables</h3>
+<p class="small">
+<b>Board coordonné ou « effrayant » :</b> un tableau avec plusieurs cartes hautes, un flush possible ou une quinte possible permet de représenter davantage de mains fortes. Ex : A♠ K♠ 8♠ Q♠ — une mise forte peut crédiblement représenter la couleur ou une paire haute.<br><br>
+<b>Adversaire serré (<em>tight</em>) :</b> un joueur qui ne joue que des mains solides peut passer même des paires moyennes face à de la pression répétée.<br><br>
+<b>Être en position :</b> bluffer en position est plus efficace car on contrôle mieux la taille du pot et on dispose des informations adverses avant d'agir.<br><br>
+<b>L'adversaire a montré de la faiblesse :</b> plusieurs checks successifs, un call passif au flop puis au turn — ces signaux indiquent souvent une main marginale.<br><br>
+<b>Image serrée (<em>tight image</em>) :</b> si les mains montrées récemment étaient toutes solides, les adversaires accordent davantage de crédit aux mises.
+</p>
+
+<h3>Situations à éviter</h3>
+<p class="small">
+<b>Contre un calling station :</b> un joueur qui appelle systématiquement avec n'importe quelle paire ou tirage ne peut pas être bluffé. La meilleure ligne contre lui est d'extraire de la valeur maximale avec ses bonnes mains.<br><br>
+<b>En multi-way pot :</b> plus il y a de joueurs actifs, plus la probabilité statistique qu'un d'entre eux ait touché le board est élevée. Le bluff perd massivement en efficacité à partir de trois joueurs.<br><br>
+<b>Adversaire pot committed :</b> un joueur qui a investi une grande partie de son stack ne peut plus passer rationnellement — il est « engagé » dans le pot.<br><br>
+<b>En tilt :</b> bluffer sous l'effet d'une frustration conduit presque toujours à des bluffs incohérents et coûteux.
+</p>
+
+<hr>
+
+<h1>Cours 13 : Les techniques de bluff</h1>
+
+<h3>Le continuation bet (<em>c-bet</em>) bluff</h3>
+<p class="small">
+Après avoir relancé pré-flop, miser au flop même si le board n'a pas amélioré la main. Cela représente la « continuation » de la force pré-flop. C'est le bluff le plus courant et le plus efficace dans les spots heads-up (en tête-à-tête). Fonctionne mieux sur des boards hauts ou peu connectés pour l'adversaire.
+</p>
+
+<h3>Le double et triple barrel</h3>
+<p class="small">
+Continuer à miser sur plusieurs streets consécutives (flop → turn → river) sans amélioration. Chaque street supplémentaire augmente la pression et la crédibilité de la main représentée, mais aussi le coût en cas d'appel. Le triple barrel (bluff sur les trois streets post-flop) est réservé aux situations très spécifiques contre des adversaires capables de passer de bonnes mains.
+</p>
+
+<h3>Le check-raise bluff</h3>
+<p class="small">
+Checker pour laisser l'adversaire miser, puis sur-relancer. Cette ligne représente une main très forte (set, couleur) car un joueur avec une main faible ne check-raise généralement pas. Très efficace mais risqué si l'adversaire a effectivement une main solide.
+</p>
+
+<h3>Le squeeze bluff</h3>
+<p class="small">
+Face à une relance suivie d'un appel, sur-relancer (3-bet) avec une main faible. La logique est la suivante : le relanceur initial doit avoir une main forte pour continuer face à une relance ET un appel ; le caleur est en position difficile. Cette situation crée une pression maximale. Le squeeze fonctionne mieux contre un relanceur loose et un caller passif.
+</p>
+
+<h3>L'overbet bluff</h3>
+<p class="small">
+Miser plus que la taille du pot (100–200 % du pot) pour représenter une main très forte, voire les <em>nuts</em>. Cette approche est très polarisante — elle dit implicitement « j'ai soit la meilleure main possible, soit rien ». À utiliser dans des spots très spécifiques, notamment lorsque la river complète un tirage que l'on représente depuis le flop.
+</p>
+
+<hr>
+
+<h1>Cours 14 : Le sizing dans le bluff</h1>
+<p class="small">
+La taille de la mise est une variable à part entière. Une mise trop petite n'exerce pas assez de pression ; une mise trop grande perd trop d'argent en cas d'appel. Le sizing doit être calibré en fonction de l'objectif et du contexte.
+</p>
+
+<h3>Références de sizing par street</h3>
+<p class="small">
+<b>Flop :</b> 33 à 66 % du pot. Un c-bet à 50 % du pot est le plus courant — il offre un bon ratio entre fold equity et risque.<br><br>
+<b>Turn :</b> 60 à 75 % du pot. La pression augmente avec les streets ; le sizing doit refléter cette escalade.<br><br>
+<b>River :</b> 50 à 120 % du pot selon la situation. Un bluff à 33 % (blocking bet) vise uniquement à passer les mains très faibles ; un bluff à 100–150 % (overbet) vise à forcer le fold de mains moyennes ou même bonnes.
+</p>
+
+<h3>La règle de cohérence</h3>
+<p class="small">
+Le sizing doit être cohérent tout au long d'une main. Des changements brutaux de taille de mise entre les streets (ex : 30 % au flop puis 150 % au turn) sont des signaux d'alarme pour les bons joueurs. Il est également essentiel d'utiliser le même sizing pour ses bluffs et ses value bets — toute asymétrie est exploitable.
+</p>
+
+<hr>
+
+<h1>Cours 15 : Détecter et contrer les bluffs adverses</h1>
+<p class="small">
+Savoir bluffer est une compétence. Savoir détecter les bluffs adverses en est une autre, tout aussi importante. Un joueur qui appelle trop perd face aux value bets ; un joueur qui passe trop est systématiquement bluffé. L'équilibre est la clé.
+</p>
+
+<h3>Signaux d'un bluff probable</h3>
+<p class="small">
+<b>Histoire incohérente :</b> l'adversaire a joué passivement (check-call) tout au long de la main, puis mise très fort à la river. Quelle main jouerait ainsi ? Peu de mains fortes — c'est souvent un bluff désespéré.<br><br>
+<b>Sizing incohérent :</b> une mise disproportionnée par rapport aux actions précédentes, ou une grosse mise sur un board où il est difficile de représenter une main forte.<br><br>
+<b>Timing suspect :</b> une mise immédiate peut indiquer un bluff automatique ou une hand range très polarisée.<br><br>
+<b>Board « brique » :</b> la river n'a complété aucun tirage — si l'adversaire mise alors, il peut représenter très peu de mains fortes que le board favorise.
+</p>
+
+<h3>Quand appeler un bluff</h3>
+<p class="small">
+L'appel d'un bluff potentiel se justifie mathématiquement par les <em>pot odds</em> : si le pot est de 100€ et que l'adversaire mise 50€, on doit payer 50€ pour en gagner 150€, ce qui nécessite d'avoir raison seulement 33 % du temps pour que l'appel soit rentable. Si l'adversaire bluffe plus de 33 % du temps dans cette situation, l'appel est correct. Une main dite <em>bluff-catcher</em> — une main moyenne qui bat les bluffs mais perd contre les vraies mains — est l'outil idéal pour ces situations.
+</p>
+
+<h3>Call ou relance ?</h3>
+<p class="small">
+<b>L'appel</b> est la réponse standard face à un bluff présumé avec une bluff-catcher.<br><br>
+<b>La relance</b> (bluff-catch raise) est envisageable uniquement si l'adversaire peut passer des mains qui nous battent — c'est une ligne avancée qui nécessite une lecture très précise.
+</p>
+
+<h3>Les erreurs classiques</h3>
+<p class="small">
+<b>Le hero-call systématique :</b> appeler uniquement parce qu'on « sent le bluff », sans justification logique basée sur les pot odds ou le range adverse. C'est du gambling, pas de la stratégie.<br><br>
+<b>La paranoïa permanente :</b> considérer que chaque mise adverse est un bluff expose à des pertes massives face aux value bets.<br><br>
+<b>Ne jamais folder ses bonnes mains :</b> certains boards favorisent tellement certaines mains adverses que même une bonne main mérite d'être passée. Savoir passer une paire de Kings sur un board A-A-A est une compétence.
+</p>
+
+<p class="small">
+<b>Pour conclure ce thème :</b> le bluff est un outil parmi d'autres, pas une fin en soi. Les meilleurs bluffeurs ne sont pas ceux qui bluffent le plus souvent, mais ceux qui choisissent leurs spots avec une précision chirurgicale. L'expérience et l'analyse des sessions sont les seuls moyens d'affiner ce jugement.
+</p>
+
+</div>
+
+<div class="social-media">
+  <a href="index.html" class="social-icon">Retour à la page d'accueil</a>
+</div>
+
+<div class="social-media">
+  <p class="small">Page codée par l'humble président du Club Poker</p>
+</div>
+
+<footer class="footer">
+  <p>Club Poker LLG - Maison des Lycéens du Lycée Louis-le-Grand</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="fr">
+<head>
+   <link rel="stylesheet" href="styletest.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Proba Préflop — Texas Hold'em</title>
+  <style>
+    body{margin:18px;background:#0A0A0A;color:#B89C6F}
+    .card-input{width:50%;padding:8px;border-radius:6px;border:1px solid #7C243B
+      ;background:#0A0A0A;color:#B89C6F}
+    .panel{background:#0A0A0A;padding:16px;border-radius:10px;box-shadow:0 6px 20px rgba(2,6,23,0.6)}
+    label{display:block;margin:8px 0 6px;font-weight:600}
+    button{background:#B89C6F;border:1px solid #7C243B;padding:10px 14px;border-radius:3px;color:rgb(0, 0, 0);cursor:pointer;font-weight:700;}
+    .row{display:flex;gap:1px}
+    .col{flex:1}
+    .small{font-size:0.9rem;color:#F5F5DC}
+    pre{background:#000000;padding:12px;border-radius:8px;overflow:auto}
+  </style>
+</head>
+<body class="bodycours"; style="text-align: center;">
+   <header class="header">
+        <div class="logo">
+            <h1>Club Poker LLG</h1>
+        </div>
+        <nav class="nav-menu">
+            <ul>  
+                <li><a href="index.html">Accueil</a></li>
+                <li><a style="font-weight: bold;" href="outils.html">Outils de jeu</a></li>
+               <li><a href="cours.html">Cours</a></li>
+               <li><a href="tournoi.html">Tournoi</a></li>
+                <li><a href="connexion.html">Connexion</a></li>
+                </ul>
+        </nav>
+    </header>
+  <h1>Probabilités Préflop</h1>
+  <div class="panel">
+    <div class="row">
+      <div class="col">
+        <label>Main 1 (ex: AhKs)</label>
+        <input id="hand1" class="card-input" value="AhKs">
+      </div>
+      <div class="col">
+        <label>Main 2 (ex: QcQd)</label>
+        <input id="hand2" class="card-input" value="QcQd">
+      </div>
+    </div>
+    <div style="display:flex;gap:12px;margin-top:10px;align-items:center;justify-content:center">
+      <div>
+        <label>Simulations Monte-Carlo</label>
+        <input id="sims" type="number" value="20000" min="100" max="200000" style="width:120px;padding:6px;border-radius:6px;border:1px solid #7C243B;background: #0a0a0a;;color:#B89C6F">
+      </div>
+      </div>
+      <div style="margin-top:22px">
+        <button class="social-icon" id="run" >Calculer</button>
+      </div>
+    </div>
+    <div style="margin-top:12px"; style="margin-inline-start:100px"; class="small">Format de carte : valeurs = 2 3 4 5 6 7 8 9 T J Q K A, couleurs = s(spades = piques) h(hearts = coeurs) d(diamonds = carreaux) c(clubs = trèfles). Ex: As Kh Qc Jd 9s</div>
+  </div>
+
+  <div style="margin-top:16px" class="panel">
+    <h3>Résultats</h3>
+    <div id="output">Aucun calcul encore.</div>
+  </div>
+
+  <script>
+  const RANKS = '23456789TJQKA';
+  const SUITS = 'shdc';
+
+  function normalizeCardToken(tok){
+    tok = tok.replace(/[♥]/g,'h').replace(/[♠]/g,'s').replace(/[♦]/g,'d').replace(/[♣]/g,'c');
+    tok = tok.trim();
+    if(tok.length===2){
+      return tok[0].toUpperCase() + tok[1].toLowerCase();
+    }
+    let rank = tok.split('').find(ch => RANKS.includes(ch.toUpperCase()));
+    let suit = tok.split('').find(ch => SUITS.includes(ch.toLowerCase()));
+    if(!rank || !suit) return '';
+    return rank.toUpperCase() + suit.toLowerCase();
+  }
+
+  function parseCards(str){
+    if(!str) return [];
+    let s = str.replace(/♠/g,'s').replace(/♣/g,'c').replace(/♥/g,'h').replace(/♦/g,'d');
+    const re = /([2-9TJQKA][shdc])/ig;
+    const matches = s.match(re);
+    if(matches && matches.length>0){
+      return matches.map(m => normalizeCardToken(m)).filter(Boolean);
+    }
+    const parts = s.split(/[\s,;\/]+/).filter(Boolean);
+    return parts.map(normalizeCardToken).filter(Boolean);
+  }
+
+  function deckFull(){
+    const d = [];
+    for(const r of RANKS) for(const s of SUITS) d.push(r + s);
+    return d;
+  }
+
+  function removeFromDeck(deck, cards){
+    const set = new Set(cards);
+    return deck.filter(c => !set.has(c));
+  }
+
+  function rankFive(cards){
+    const ranks = cards.map(c => RANKS.indexOf(c[0]) + 2).sort((a,b)=>b-a);
+    const suits = cards.map(c=>c[1]);
+    const counts = {};
+    for(const r of ranks) counts[r] = (counts[r]||0)+1;
+    const countsArr = Object.entries(counts).map(([r,c])=>[parseInt(r),c]).sort((a,b)=>{
+      if(b[1]!==a[1]) return b[1]-a[1];
+      return b[0]-a[0];
+    });
+
+    const isFlush = suits.every(s => s===suits[0]);
+
+    let uniqueRanks = Array.from(new Set(ranks)).sort((a,b)=>b-a);
+    let isStraight=false, topStraight=0;
+    for(let i=0;i<=uniqueRanks.length-5;i++){
+      const seq = uniqueRanks.slice(i,i+5);
+      if(seq[0]-seq[4]===4){ isStraight=true; topStraight=seq[0]; break; }
+    }
+    if(!isStraight){
+      const lowSeq = [14,5,4,3,2];
+      if(lowSeq.every(x=>uniqueRanks.includes(x))){ isStraight=true; topStraight=5; }
+    }
+
+    if(isFlush){
+      const suit = suits[0];
+      const suitedRanks = cards.filter(c=>c[1]===suit).map(c=>RANKS.indexOf(c[0])+2).sort((a,b)=>b-a);
+      const uniq = Array.from(new Set(suitedRanks)).sort((a,b)=>b-a);
+      for(let i=0;i<=uniq.length-5;i++){
+        const seq = uniq.slice(i,i+5);
+        if(seq[0]-seq[4]===4) return [8, seq[0]];
+      }
+      if(uniq.includes(14) && uniq.includes(5)&&uniq.includes(4)&&uniq.includes(3)&&uniq.includes(2)) return [8,5];
+    }
+
+    if(countsArr[0][1]===4){
+      const fourRank = countsArr[0][0];
+      const kicker = countsArr.find(x=>x[1]===1)[0];
+      return [7, fourRank, kicker];
+    }
+    if(countsArr[0][1]===3 && countsArr[1] && countsArr[1][1]>=2){
+      return [6, countsArr[0][0], countsArr[1][0]];
+    }
+    if(isFlush){ return [5, ...ranks]; }
+    if(isStraight) return [4, topStraight];
+    if(countsArr[0][1]===3){
+      const trips = countsArr[0][0];
+      const kickers = countsArr.filter(x=>x[1]===1).map(x=>x[0]).sort((a,b)=>b-a);
+      return [3, trips, ...kickers];
+    }
+    if(countsArr[0][1]===2 && countsArr[1] && countsArr[1][1]===2){
+      const hi = countsArr[0][0];
+      const lo = countsArr[1][0];
+      const kicker = countsArr.find(x=>x[1]===1)[0];
+      return [2, hi, lo, kicker];
+    }
+    if(countsArr[0][1]===2){
+      const pair = countsArr[0][0];
+      const kickers = countsArr.filter(x=>x[1]===1).map(x=>x[0]).sort((a,b)=>b-a);
+      return [1, pair, ...kickers];
+    }
+    return [0, ...ranks];
+  }
+
+  function compareRank(a,b){
+    for(let i=0;i<Math.max(a.length,b.length);i++){
+      const ai = a[i]||0; const bi = b[i]||0;
+      if(ai!==bi) return ai>bi?1:-1;
+    }
+    return 0;
+  }
+
+  function bestSeven(cards7){
+    let best = null;
+    const n = 7;
+    for(let i=0;i<n-4;i++){
+      for(let j=i+1;j<n-3;j++){
+        for(let k=j+1;k<n-2;k++){
+          for(let l=k+1;l<n-1;l++){
+            for(let m=l+1;m<n;m++){
+              const five = [cards7[i],cards7[j],cards7[k],cards7[l],cards7[m]];
+              const r = rankFive(five);
+              if(!best || compareRank(r,best)===1) best = r;
+            }
+          }
+        }
+      }
+    }
+    return best;
+  }
+
+  function shuffle(a){
+    for(let i=a.length-1;i>0;i--){
+      const j = Math.floor(Math.random()*(i+1));
+      const tmp = a[i]; a[i]=a[j]; a[j]=tmp;
+    }
+  }
+
+  document.getElementById('run').addEventListener('click', ()=>{
+    const h1 = parseCards(document.getElementById('hand1').value);
+    const h2 = parseCards(document.getElementById('hand2').value);
+    const sims = parseInt(document.getElementById('sims').value,10) || 1000;
+    const out = document.getElementById('output');
+    out.innerHTML = '<div class="small">Calcul en cours...</div>';
+
+    try{
+      if(h1.length!==2) throw new Error('Main 1 invalide');
+      if(h2.length!==2) throw new Error('Main 2 invalide');
+      const used = new Set([...h1,...h2]);
+      if(used.size !== h1.length+h2.length) throw new Error('Doublons détectés');
+
+      const deck = removeFromDeck(deckFull(), Array.from(used));
+      let done=0, w1=0, w2=0, tie=0;
+
+      function runChunk(){
+        const chunk = 2000;
+        const runN = Math.min(chunk, sims-done);
+        for(let t=0;t<runN;t++){
+          const deckCopy = deck.slice();
+          shuffle(deckCopy);
+          const draw = deckCopy.slice(0,5); // 5 cartes du board
+          const best1 = bestSeven([...h1, ...draw]);
+          const best2 = bestSeven([...h2, ...draw]);
+          const cmp = compareRank(best1,best2);
+          if(cmp>0) w1++; else if(cmp<0) w2++; else tie++;
+        }
+        done += runN;
+        out.innerHTML = `<div>Progression : ${done} / ${sims}</div>`;
+        if(done < sims){
+          setTimeout(runChunk, 0);
+        } else {
+          const p1 = (w1/sims*100).toFixed(2);
+          const p2 = (w2/sims*100).toFixed(2);
+          const pt = (tie/sims*100).toFixed(2);
+          out.innerHTML = `
+            <div><strong>Main 1:</strong> ${h1.join(' ')} — <strong>Main 2:</strong> ${h2.join(' ')}</div>
+            <div style="margin-top:8px">Après ${sims} simulations :</div>
+            <pre>
+Main 1 gagne : ${w1} (${p1}%)
+Main 2 gagne : ${w2} (${p2}%)
+Egalité      : ${tie} (${pt}%)
+            </pre>
+          `;
+        }
+      }
+      runChunk();
+
+    }catch(e){
+      out.innerHTML = '<div style="color:#ffb4b4">Erreur: '+e.message+'</div>';
+    }
+  });
+  </script>
+
+  <div class="social-media">
+                    <a href="index.html" class="social-icon">Retour à la page d'accueil</a> 
+  </div>
+
+</body>
+
+<footer class="footer", style="color: #F5F5DC; margin-top: 10px;">
+        <p>Club Poker LLG - Maison des Lycéens du Lycée Louis-le-Grand</p>
+    </footer>
+</html>

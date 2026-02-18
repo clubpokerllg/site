@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque PDF</title>
+    <link rel="stylesheet" href="styletest.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    
+    <style>
+        .lib-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .header-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .lib-title {
+            font-family: 'Playfair Display', serif;
+            color: #B89C6F;
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+
+        .pdf-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .pdf-card {
+            background: rgba(15, 15, 15, 0.9);
+            border: 1px solid rgba(184, 156, 111, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pdf-card:hover {
+            transform: translateY(-10px);
+            border-color: #B89C6F;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+        }
+
+        .pdf-card::before {
+            content: "PDF";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 10px;
+            color: #7C243B;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .pdf-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #B89C6F;
+            margin: 0 0 10px 0;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        .pdf-card p {
+            color: #F5F5DC;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            opacity: 0.8;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .btn-open {
+            background: transparent;
+            color: #B89C6F;
+            border: 1px solid #B89C6F;
+            padding: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .btn-open:hover {
+            background: #B89C6F;
+            color: #0A0A0A;
+        }
+
+        .back-nav {
+            margin-bottom: 20px;
+        }
+
+        .back-btn {
+            color: #F5F5DC;
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { opacity: 1; color: #B89C6F; }
+
+        @media (max-width: 600px) {
+            .pdf-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo"><h1>Club Poker LLG</h1></div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a style="font-weight: bold;" href="outils.html">Outils de jeu</a></li>
+                <li><a href="cours.html">Cours</a></li>
+                <li><a href="tournoi.html">Tournoi</a></li>
+                <li><a href="connexion.html">Connexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lib-container">
+
+        <div class="header-section">
+            <h1 class="lib-title">Bibliothèque de PDF</h1>
+        </div>
+
+        <div class="pdf-grid" id="pdfGrid">
+
+            <div class="pdf-card">
+                <h3>Calcul d'outs</h3>
+                <p>Apprenez à calculer vos outs et vos probabilités de toucher votre tirage au tournant.</p>
+                <a href="pdffiles/Outs.pdf" class="btn-open" target="_blank">Ouvrir le document</a>
+            </div>
+
+            <div class="pdf-card">
+                <h3>Probabilités As</h3>
+                <p>Comprendre les probabilités associées aux mains As dans différentes situations de jeu.</p>
+                <a href="pdffiles/Proba_As.pdf" class="btn-open" target="_blank">Ouvrir le document</a>
+            </div>  
+
+            <div class="pdf-card">
+                <h3>Probabilités 67</h3>
+                <p>Comprendre les probabilités associées aux mains 67 dans différentes situations de jeu.</p>
+                <a href="pdffiles/Proba_67.pdf" class="btn-open" target="_blank">Ouvrir le document</a>
+            </div>
+
+
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Club Poker LLG - Maison des Lycéens du Lycée Louis-le-Grand</p>
+    </footer>
+
+</body>
+</html>
